@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build"
+  },
+  "deploy": {
+    "startCommand": "npx medusa db:migrate && npx medusa db:sync-links && PORT=$PORT npx medusa start",
+    "healthcheckPath": "/health"
+  }
+}
+
+
